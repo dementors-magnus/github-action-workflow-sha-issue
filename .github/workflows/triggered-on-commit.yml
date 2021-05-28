@@ -2,7 +2,7 @@ name: Triggered on commit
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - trigger-jobb.txt
 
