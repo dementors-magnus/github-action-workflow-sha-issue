@@ -1,0 +1,13 @@
+name: Last job triggered on intermediate job done
+
+on:
+  workflow_run:
+    workflows: ["Intermediate job triggered on commit workflow done"]
+    types:
+      - completed
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "SHA: ${{ github.event.workflow_run.head_sha }}"'

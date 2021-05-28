@@ -1,0 +1,14 @@
+name: Triggered on commit
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - trigger-jobb.txt
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "SHA: ${{ github.sha }}"'
+      - run: sleep 60
